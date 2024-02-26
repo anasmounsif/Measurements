@@ -1,26 +1,27 @@
-<h1 class="my-2" style="font-size: 1.2rem">Measurements for {{ vehicle.make }}</h1>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">date</th>
-    <th scope="col">position</th>
-    <th scope="col">value</th>
-    <th scope="col">coordinate_x</th>
-    <th scope="col">coordinate_y</th>
-    <th scope="col">angle</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let measurement of measurements$ | async; index as i">
-    <th scope="row">{{ i + 1 }}</th>
-    <td>{{ measurement.date | date: "MMM dd, yyyy 'at' hh:mm a" }}</td>
-    <td>{{ measurement.position }}</td>
-    <td>{{ measurement.value }}</td>
-    <td>{{ measurement.coordinate_x }}</td>
-    <td>{{ measurement.coordinate_y }}</td>
-    <td>{{ measurement.angle }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="border rounded p-3">
+  <h1 class="mb-3" style="font-size: 1.2rem">Measurements for {{ vehicle.make }}</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Position</th>
+      <th scope="col">Pressure</th>
+      <th scope="col">Temperature</th>
+      <th scope="col">Angular Speed (Omega)</th>
+      <th scope="col">Speed (km/h)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let measurement of measurements$ | async; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ measurement.timestamp | date: "MMM dd, yyyy 'at' hh:mm a" }}</td>
+      <td>{{ measurement.position }}</td>
+      <td>{{ measurement.press }}</td>
+      <td>{{ measurement.temp }}°</td>
+      <td>{{ measurement.omega }}</td>
+      <td>{{ measurement.speed }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

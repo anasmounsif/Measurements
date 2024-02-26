@@ -15,7 +15,7 @@ export class VehicleService {
     return this.http.get<Vehicle[]>(`${this.BASE_URL}/vehicles`);
   }
 
-  getVehicle(id: number): Observable<Vehicle> {
+  getVehicleById(id: number): Observable<Vehicle> {
     return this.http.get<Vehicle[]>(`${this.BASE_URL}/vehicles?id=${id}`).pipe(
       map((vehicles: Vehicle[]) => {
         if (vehicles.length === 0) {

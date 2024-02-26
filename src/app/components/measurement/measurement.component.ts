@@ -28,6 +28,12 @@ export class MeasurementComponent implements OnInit {
     this.fetchData();
   }
 
+  /**
+   * Retrieves the vehicle data from the Angular route resolver associated with the current route
+   * and initializes the display of vehicle details, including its measurements.
+   * If the vehicle is not found (e.g., data not available in the route),
+   * the user is redirected to the vehicle list.
+   */
   private fetchData() {
     this.vehicle = this.route.snapshot.data['vehicleData'];
 
@@ -36,7 +42,9 @@ export class MeasurementComponent implements OnInit {
       return;
     }
 
+    // Sets tab title with vehicle's make value
     this.titleService.setTitle(this.vehicle?.make + ' | Measurements');
+
     this.measurements$ = this.measurementService.getMeasurementsByVehicleId(
       this.vehicle.id,
     );
@@ -45,6 +53,6 @@ export class MeasurementComponent implements OnInit {
   private goToVehicles() {
     this.router
       .navigate(['/vehicles'])
-      .catch((error) => console.error('Error during navigation:', error));
+      .catch((error) => alert('Error during navigation: ' + error));
   }
 }
