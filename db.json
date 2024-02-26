@@ -1,0 +1,58 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "make": "Volvo V40"
+    },
+    {
+      "id": 2,
+      "make": "Porsche 911"
+    },
+    {
+      "id": 3,
+      "make": "Audi A6"
+    }
+  ],
+  "measurements": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "date": "2017-05-23T01:06:00",
+      "value": 2.75,
+      "position": "Front Left",
+      "angle": 39.0,
+      "coordinate_x": 64.0893101528,
+      "coordinate_y": 71.9216243385
+    },
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "date": "2017-05-23T01:06:00",
+      "value": 2.75,
+      "position": "Front Left",
+      "angle": 39.0,
+      "coordinate_x": 64.0893101528,
+      "coordinate_y": 71.9216243385
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "date": "2017-05-23T01:06:00",
+      "value": 2.75,
+      "position": "Front Left",
+      "angle": 39.0,
+      "coordinate_x": 64.0893101528,
+      "coordinate_y": 71.9216243385
+    },
+    {
+      "id": 3,
+      "vehicleId": 3,
+      "date": "2017-05-23T01:06:00",
+      "value": 2.75,
+      "position": "Front Left",
+      "angle": 39.0,
+      "coordinate_x": 64.0893101528,
+      "coordinate_y": 71.9216243385
+    }
+  ]
+}
