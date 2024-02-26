@@ -22,11 +22,4 @@ export const routes: Routes = [
       ),
     resolve: { vehicleData: vehicleResolver },
   },
-  {
-    path: 'about',
-    loadComponent: () =>
-      import('./components/about/about.component').then(
-        (m) => m.AboutComponent,
-      ),
-  },
 ];
