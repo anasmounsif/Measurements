@@ -1,9 +1,32 @@
 import { Routes } from '@angular/router';
-import { CarMeasurementComponent } from "./car-measurement/car-measurement.component";
-import { AboutComponent } from "./about/about.component";
+import { vehicleResolver } from './resolvers/vehicle.resolver';
 
 export const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "car-measurements" },
-  { path: "car-measurements", component: CarMeasurementComponent },
-  { path: "about", component: AboutComponent }
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'vehicles',
+  },
+  {
+    path: 'vehicles',
+    loadComponent: () =>
+      import('./components/vehicle/vehicles.component').then(
+        (m) => m.VehiclesComponent,
+      ),
+  },
+  {
+    path: 'vehicles/:vehicleId',
+    loadComponent: () =>
+      import('./components/measurement/measurement.component').then(
+        (m) => m.MeasurementComponent,
+      ),
+    resolve: { vehicleData: vehicleResolver },
+  },
+  {
+    path: 'about',
+    loadComponent: () =>
+      import('./components/about/about.component').then(
+        (m) => m.AboutComponent,
+      ),
+  },
 ];
