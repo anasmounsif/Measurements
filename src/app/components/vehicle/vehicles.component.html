@@ -1,16 +1,19 @@
-<h1 class="my-2" style="font-size: 1.2rem">Vehicles</h1>
-
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Make</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr (click)="navigateToMeasurements(vehicle.id)" *ngFor="let vehicle of vehicles$ | async; index as i">
-    <th scope="row">{{ i + 1 }}</th>
-    <td>{{ vehicle.make }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="border rounded p-3">
+  <h1 class="mb-3" style="font-size: 1.2rem">Vehicles</h1>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Make</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      (click)="navigateToMeasurements(vehicle.id)"
+      *ngFor="let vehicle of vehicles$ | async; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ vehicle.make }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

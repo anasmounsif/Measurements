@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../interfaces/vehicle';
-import { catchError, EMPTY, Observable, Subscription } from 'rxjs';
+import { catchError, EMPTY, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -12,9 +12,8 @@ import { Title } from '@angular/platform-browser';
   imports: [CommonModule],
   templateUrl: './vehicles.component.html',
 })
-export class VehiclesComponent implements OnInit, OnDestroy {
+export class VehiclesComponent implements OnInit {
   vehicles$!: Observable<Vehicle[]>;
-  private _subscriptions: Subscription = new Subscription();
 
   constructor(
     private vehicleService: VehicleService,
@@ -29,16 +28,16 @@ export class VehiclesComponent implements OnInit, OnDestroy {
     this.getVehicles();
   }
 
-  ngOnDestroy(): void {
-    this._subscriptions.unsubscribe();
-  }
-
   navigateToMeasurements(vehicleId: number) {
     this.router
       .navigate([vehicleId], { relativeTo: this.route })
-      .catch((error) => console.error('Error during navigation:', error));
+      .catch((error) => alert('Error during navigation: ' + error));
   }
 
+  /**
+   * Fetches a list of vehicles from the vehicle service and assigns the resulting
+   * Observable to `vehicles$`
+   */
   private getVehicles() {
     this.vehicles$ = this.vehicleService.getVehicles().pipe(
       catchError((error: Error) => {
