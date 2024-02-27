@@ -31,4 +31,11 @@ export const routes: Routes = [
       import('./components/auth/auth.component').then((m) => m.AuthComponent),
     canActivate: [authGuard],
   },
+  {
+    path: 'about',
+    loadComponent: () =>
+      import('./components/about/about.component').then(
+        (m) => m.AboutComponent,
+      ),
+  },
 ];

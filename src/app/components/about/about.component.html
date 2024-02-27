@@ -1,0 +1,86 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title mb-3">Project overview</h3>
+          <p class="card-text">
+            The project focuses on displaying vehicles along with their detailed measurements and
+            includes a simple mock login form. Upon successful login, users can view vehicles fetched from the server,
+            each associated
+            with specific measurements.
+          </p>
+          <p class="card-text">
+            By selecting a vehicle, users are directed to a details view where the component
+            requests the backend for measurements related to that vehicle based on its ID in the route.
+          </p>
+          <p class="card-text">
+            <a class="custom-link-color"
+               href="https://www.figma.com/file/RkHwnBHYcBvT7y6r6OIZ7P/Measurements-Mockup?type=design&node-id=0%3A1&mode=design&t=2EvONRry6zc0LUKI-1">Here</a>
+            is the link to view the mock on figma.
+          </p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title mb-3">Challenges and Solutions</h3>
+          <p class="card-text">
+            A simulated login flow was introduced for this project. The token, generated client-side,
+            is stored in localStorage to maintain application state. Conversely, the logout process removes this data
+            from localStorage.
+            The application gracefully handles the scenario where a searched vehicle is unavailable;
+            an alert is triggered, and the user is redirected to the main view displaying vehicles.
+          </p>
+          <p class="card-text">
+            Various Angular features were utilized for code implementation, such as attributive directives for
+            customizing headlines, route guards to restrict data access based on user authentication status, and
+            resolvers to fetch necessary data for a component before navigation. Services were used for backend
+            communication, authentication utilities, and localStorage persistence.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title mb-3">Future Directions</h3>
+          <p class="card-text">
+            Unfortunately, json-server does not support token management for authentication. Ideally,
+            a middleware would be implemented to generate tokens for the client, enabling further operations, followed
+            by the implementation of an interceptor to decorate HTTP calls with the token.
+          </p>
+          <p class="card-text">
+            The data used are simple and limited; in a production scenario, data volume will significantly increase.
+            Potential approaches to manage large datasets include enhancing grids to accommodate all data, implementing
+            server-side and client-side pagination, or an infinite scrolling mechanism to avoid overloading with a
+            single getAll call. For real-time data requirements, websockets could be a viable solution.
+          </p>
+          <p class="card-text">
+            Furthermore, they can be implemented in facilities to allow the user to understand the data he sees, such as
+            modals with details, calculations and predictions on the progress of measurements
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="mb-3">
+        <h3>Technologies </h3>
+        <ul class="list-group">
+          <li class="list-group-item">Angular 17</li>
+          <li class="list-group-item">Bootstrap 5</li>
+          <li class="list-group-item">Json Server</li>
+          <li class="list-group-item">Figma</li>
+          <li class="list-group-item">GitHub</li>
+        </ul>
+      </div>
+      <div class="alert alert-info" role="alert">
+        Note: The current implementation serves as a prototype. Security and data management features must be enhanced
+        for production readiness.
+      </div>
+      <div class="alert alert-info" role="alert">
+        LogIn fake data:
+        <br>
+        <strong>Username: </strong> user
+        <br>
+        <strong>Password: </strong> pass
+      </div>
+    </div>
+  </div>
+</div>
