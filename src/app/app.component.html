@@ -3,6 +3,12 @@
     <a class="navbar-brand" routerLink="/vehicles">
       <img alt="Bootstrap" src="assets/Pirelli_logo.svg" width="150">
     </a>
+
+    <li *ngIf="authService.isLoggedIn" class="nav-item d-flex">
+      <a (click)="authService.logout()" class="nav-link"
+         role="button">Logout</a>
+    </li>
+
   </div>
 </nav>
 

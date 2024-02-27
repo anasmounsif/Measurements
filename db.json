@@ -1,61 +1,61 @@
 {
   "vehicles": [
     {
-      "id": 1,
+      "id": "1",
       "make": "Volvo V40"
     },
     {
-      "id": 2,
+      "id": "2",
       "make": "Porsche 911"
     },
     {
-      "id": 3,
+      "id": "3",
       "make": "Audi A6"
     }
   ],
   "measurements": [
     {
-      "id": 1,
+      "id": "1",
       "vehicleId": 1,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.54999995232,
       "position": "Front Left",
-      "temp": 9.0,
+      "temp": 9,
       "omega": 45.4199999641,
       "speed": 51.0111111535
     },
     {
-      "id": 2,
+      "id": "2",
       "vehicleId": 1,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.75,
       "position": "Front Left",
-      "temp": 29.0,
+      "temp": 29,
       "omega": 70.9617082549,
       "speed": 79.8697624207
     },
     {
-      "id": 3,
+      "id": "3",
       "vehicleId": 1,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.79999995232,
       "position": "Rear Right",
-      "temp": 31.0,
+      "temp": 31,
       "omega": 70.9039023795,
       "speed": 79.8697624207
     },
     {
-      "id": 4,
+      "id": "4",
       "vehicleId": 1,
       "timestamp": "2017-03-03T00:01:00",
       "press": 2.54999995232,
       "position": "Front Left",
-      "temp": 9.0,
+      "temp": 9,
       "omega": 44.7129091436,
       "speed": 50.260892868
     },
     {
-      "id": 5,
+      "id": "5",
       "vehicleId": 1,
       "timestamp": "2017-03-03T00:02:00",
       "press": 2.64999995232,
@@ -65,7 +65,7 @@
       "speed": 49.7208551031
     },
     {
-      "id": 6,
+      "id": "6",
       "vehicleId": 2,
       "timestamp": "2017-03-03T00:00:00",
       "press": 5.72424258608,
@@ -75,7 +75,7 @@
       "speed": 51.9511627079
     },
     {
-      "id": 7,
+      "id": "7",
       "vehicleId": 2,
       "timestamp": "2017-03-03T00:00:00",
       "press": 5.76969712431,
@@ -85,7 +85,7 @@
       "speed": 51.9511627079
     },
     {
-      "id": 8,
+      "id": "8",
       "vehicleId": 2,
       "timestamp": "2017-03-03T00:00:00",
       "press": 5.72424258608,
@@ -95,47 +95,47 @@
       "speed": 51.9622757079
     },
     {
-      "id": 9,
+      "id": "9",
       "vehicleId": 2,
       "timestamp": "2017-03-03T00:01:00",
       "press": 2.5,
       "position": "Front Left",
-      "temp": 17.0,
+      "temp": 17,
       "omega": 59.2202171657,
       "speed": 71.8425539707
     },
     {
-      "id": 10,
+      "id": "10",
       "vehicleId": 2,
       "timestamp": "2017-03-03T00:01:00",
       "press": 2.79999995232,
       "position": "Rear Left",
-      "temp": 19.0,
+      "temp": 19,
       "omega": 59.8836956853,
       "speed": 71.8425539707
     },
     {
-      "id": 11,
+      "id": "11",
       "vehicleId": 3,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.65000009537,
       "position": "Front Left",
-      "temp": 13.0,
+      "temp": 13,
       "omega": 45.2429165045,
       "speed": 53.7056702289
     },
     {
-      "id": 12,
+      "id": "12",
       "vehicleId": 3,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.54999995232,
       "position": "Rear Right",
-      "temp": 9.0,
+      "temp": 9,
       "omega": 45.2242709398,
       "speed": 53.7056702289
     },
     {
-      "id": 13,
+      "id": "13",
       "vehicleId": 3,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.54999995232,
@@ -145,22 +145,22 @@
       "speed": 53.7056702289
     },
     {
-      "id": 14,
+      "id": "14",
       "vehicleId": 3,
       "timestamp": "2017-03-03T00:00:00",
       "press": 2.64871803919,
       "position": "Front Right",
-      "temp": 15.0,
+      "temp": 15,
       "omega": 45.2743748824,
       "speed": 53.7056702289
     },
     {
-      "id": 14,
+      "id": "14",
       "vehicleId": 3,
       "timestamp": "2017-03-03T00:01:00",
       "press": 2.54999995232,
       "position": "Rear Left",
-      "temp": 12.0,
+      "temp": 12,
       "omega": 57.7762652018,
       "speed": 68.4469047274
     }

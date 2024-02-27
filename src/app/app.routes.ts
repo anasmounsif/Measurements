@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { vehicleResolver } from './resolvers/vehicle.resolver';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
       import('./components/vehicle/vehicles.component').then(
         (m) => m.VehiclesComponent,
       ),
+    canActivate: [authGuard],
   },
   {
     path: 'vehicles/:vehicleId',
@@ -21,5 +23,12 @@ export const routes: Routes = [
         (m) => m.MeasurementComponent,
       ),
     resolve: { vehicleData: vehicleResolver },
+    canActivate: [authGuard],
+  },
+  {
+    path: 'auth',
+    loadComponent: () =>
+      import('./components/auth/auth.component').then((m) => m.AuthComponent),
+    canActivate: [authGuard],
   },
 ];

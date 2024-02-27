@@ -5,6 +5,7 @@ import { catchError, EMPTY, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { handleError } from '../../utils/errorHandler';
 
 @Component({
   selector: 'app-car-measurement',
@@ -31,7 +32,7 @@ export class VehiclesComponent implements OnInit {
   navigateToMeasurements(vehicleId: number) {
     this.router
       .navigate([vehicleId], { relativeTo: this.route })
-      .catch((error) => alert('Error during navigation: ' + error));
+      .catch(handleError);
   }
 
   /**

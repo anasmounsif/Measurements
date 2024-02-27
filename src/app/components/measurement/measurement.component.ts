@@ -6,16 +6,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Vehicle } from '../../interfaces/vehicle';
 import { Title } from '@angular/platform-browser';
 import { MeasurementService } from '../../services/measurement.service';
+import { HeadlineColorDirective } from '../../directives/headline-color.directive';
+import { handleError } from '../../utils/errorHandler';
 
 @Component({
   selector: 'app-measurements',
   standalone: true,
-  imports: [NgForOf, DatePipe, AsyncPipe],
+  imports: [NgForOf, DatePipe, AsyncPipe, HeadlineColorDirective],
   templateUrl: './measurement.component.html',
 })
 export class MeasurementComponent implements OnInit {
   measurements$!: Observable<Measurement[]>;
-  vehicle!: Vehicle;
+  vehicle: Vehicle | undefined;
 
   constructor(
     private measurementService: MeasurementService,
@@ -51,8 +53,6 @@ export class MeasurementComponent implements OnInit {
   }
 
   private goToVehicles() {
-    this.router
-      .navigate(['/vehicles'])
-      .catch((error) => alert('Error during navigation: ' + error));
+    this.router.navigate(['/vehicles']).catch(handleError);
   }
 }
