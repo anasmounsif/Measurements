@@ -21,6 +21,7 @@ export class VehicleService {
         if (vehicles.length === 0) {
           throw new Error('No vehicle found.');
         }
+        // Json-server returns an array, so getting the first one
         return vehicles[0];
       }),
     );

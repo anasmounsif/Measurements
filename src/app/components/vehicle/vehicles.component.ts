@@ -14,6 +14,9 @@ import { handleError } from '../../utils/errorHandler';
   templateUrl: './vehicles.component.html',
 })
 export class VehiclesComponent implements OnInit {
+  /**
+   * {@link vehicles$} used as an async pipe.
+   */
   vehicles$!: Observable<Vehicle[]>;
 
   constructor(
@@ -22,6 +25,7 @@ export class VehiclesComponent implements OnInit {
     private route: ActivatedRoute,
     private titleService: Title,
   ) {
+    // Setting the title of the browser tab
     this.titleService.setTitle('Vehicles');
   }
 
@@ -35,10 +39,6 @@ export class VehiclesComponent implements OnInit {
       .catch(handleError);
   }
 
-  /**
-   * Fetches a list of vehicles from the vehicle service and assigns the resulting
-   * Observable to `vehicles$`
-   */
   private getVehicles() {
     this.vehicles$ = this.vehicleService.getVehicles().pipe(
       catchError((error: Error) => {
