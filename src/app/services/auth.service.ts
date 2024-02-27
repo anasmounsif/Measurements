@@ -17,6 +17,11 @@ export class AuthService {
     return this.store.getAuthTokenFromLocalStorage();
   }
 
+  /**
+   * @remarks
+   * - The method uses hardcoded credentials (`username:'user'` and `password:'pass'`) for the simulation.
+   * - The method simulates token generation and storage to mimic the behavior of real authentication processes.
+   */
   fakeLogin(username: string, password: string): Observable<boolean> {
     if (!username || !password) {
       return of(false);
@@ -26,6 +31,7 @@ export class AuthService {
     const isLogged: boolean = username === 'user' && password === 'pass';
 
     if (isLogged) {
+      // Setting AuthToken in the localStorage
       this.store.setAuthTokenIntoLocalStorage(fakeToken);
       return of(true);
     }

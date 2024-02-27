@@ -21,14 +21,22 @@ export class AuthComponent {
     private router: Router,
     private titleService: Title,
   ) {
+    // Setting the title of the browser tab
     this.titleService.setTitle('Login');
   }
 
+  /**
+   * Initiates a login process for the user.
+   * @see authService.fakeLogin
+   */
   logIn() {
     this.authService
       .fakeLogin(this.username, this.password)
       .pipe(
-        tap(() => {
+        tap((isLogged: boolean) => {
+          if (!isLogged) {
+            alert('Login failed, invalid username or password.');
+          }
           this.router.navigate(['/']).catch(handleError);
         }),
       )

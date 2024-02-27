@@ -16,6 +16,9 @@ import { handleError } from '../../utils/errorHandler';
   templateUrl: './measurement.component.html',
 })
 export class MeasurementComponent implements OnInit {
+  /**
+   * {@link measurements$} used as an async pipe.
+   */
   measurements$!: Observable<Measurement[]>;
   vehicle: Vehicle | undefined;
 
@@ -31,14 +34,18 @@ export class MeasurementComponent implements OnInit {
   }
 
   /**
-   * Retrieves the vehicle data from the Angular route resolver associated with the current route
-   * and initializes the display of vehicle details, including its measurements.
-   * If the vehicle is not found (e.g., data not available in the route),
-   * the user is redirected to the vehicle list.
+   * Fetches vehicle data and initializes page content.
+   *
+   * @remarks
+   * This method retrieves the vehicle measurements from the current route's resolved data and checks for its existence.
+   * If the vehicle data is not present, it redirects to the vehicles listing page using {@link goToVehicles}.
+   * Upon successful retrieval of vehicle data, it sets the browser tab title to the vehicle's make and initiates the
+   * fetching of measurements related to the vehicle.
    */
   private fetchData() {
     this.vehicle = this.route.snapshot.data['vehicleData'];
 
+    // Fallback mechanism
     if (!this.vehicle) {
       this.goToVehicles();
       return;
@@ -47,6 +54,7 @@ export class MeasurementComponent implements OnInit {
     // Sets tab title with vehicle's make value
     this.titleService.setTitle(this.vehicle?.make + ' | Measurements');
 
+    // Fetching vehicle measurements
     this.measurements$ = this.measurementService.getMeasurementsByVehicleId(
       this.vehicle.id,
     );
