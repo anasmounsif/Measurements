@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Vehicle } from '../interfaces/vehicle';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VehicleService {
-  private readonly BASE_URL: string = 'http://localhost:3000';
+  private readonly BASE_URL: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
