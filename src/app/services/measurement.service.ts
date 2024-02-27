@@ -3,12 +3,13 @@ import { catchError, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Measurement } from '../interfaces/measurement';
 import { handleError } from '../utils/errorHandler';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MeasurementService {
-  private readonly BASE_URL: string = 'http://localhost:3000';
+  private readonly BASE_URL: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
