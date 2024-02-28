@@ -38,4 +38,11 @@ export const routes: Routes = [
         (m) => m.AboutComponent,
       ),
   },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./components/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent,
+      ),
+  },
 ];
